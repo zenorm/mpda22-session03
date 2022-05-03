@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 
-def plotGraph(G, node_size = 5):
+def plotGraph(G, node_size = 10):
     
     #pos = nx.kamada_kawai_layout(G)
     #pos = nx.planar_layout(G)
@@ -13,7 +13,7 @@ def plotGraph(G, node_size = 5):
     #plt.show(block=False)
     plt.show()
 
-def plotGraphSave(G, node_size = 5, file_name=  "nxplot.png"):
+def plotGraphSave(G, node_size = 10, file_name=  "nxplot.png"):
 
     #pos = nx.kamada_kawai_layout(G)
     #pos = nx.planar_layout(G)
