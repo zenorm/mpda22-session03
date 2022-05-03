@@ -3,9 +3,9 @@ import networkx as nx
 
 def plotGraph(G, node_size = 10):
     
-    #pos = nx.kamada_kawai_layout(G)
+    pos = nx.kamada_kawai_layout(G)
     #pos = nx.planar_layout(G)
-    pos = nx.random_layout(G)
+    #pos = nx.random_layout(G)
 
     
     nx.draw(G,pos, node_size=node_size, with_labels=True, node_color="red", alpha=0.5)
@@ -15,9 +15,9 @@ def plotGraph(G, node_size = 10):
 
 def plotGraphSave(G, node_size = 10, file_name=  "nxplot.png"):
 
-    #pos = nx.kamada_kawai_layout(G)
+    pos = nx.kamada_kawai_layout(G)
     #pos = nx.planar_layout(G)
-    pos = nx.random_layout(G)
+    #pos = nx.random_layout(G)
 
     nx.draw(G,pos, node_size=node_size, with_labels=True, node_color="red", alpha=0.5)
     plt.tight_layout()

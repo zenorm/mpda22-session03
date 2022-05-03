@@ -11,8 +11,6 @@ hops = hs.Hops(app)
     name = "meshFromPoints",
     inputs=[
         hs.HopsPoint("Points", "P", "Some Points", hs.HopsParamAccess.LIST)
-
-
     ],
 
     outputs=[

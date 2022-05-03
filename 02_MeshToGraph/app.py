@@ -3,6 +3,7 @@ import ghhops_server as hs
 
 app = Flask(__name__)
 hops = hs.Hops(app)
+logger = logging.getLogger('name')
 
 import meshpath as mp
 import meshutils as mu
