@@ -13,6 +13,7 @@ def plotGraph(G, node_size = 10):
     #plt.show(block=False)
     plt.show()
 
+
 def plotGraphSave(G, node_size = 10, file_name=  "nxplot.png"):
 
     pos = nx.kamada_kawai_layout(G)

@@ -3,7 +3,6 @@ import ghhops_server as hs
 
 app = Flask(__name__)
 hops = hs.Hops(app)
-logger = logging.getLogger('name')
 
 import meshpath as mp
 import meshutils as mu
@@ -30,11 +29,35 @@ import drawutils as du
 def meshToGraph(mesh, plot=False, save = False):
 
     G = mp.SimpleGraphFromMesh(mesh)
-    print(G)
     if plot: du.plotGraph(G)
     if save: du.plotGraphSave(G) 
     
     return str(G)
+
+
+@hops.component(
+    "/shortestpath",
+    name = "shortestpath",
+    inputs=[
+        hs.HopsMesh("Input Mesh", "M", "Mesh"),
+        hs.HopsInteger("face Index 1","f1","Face index one"),
+        hs.HopsInteger("face Index 2","f2","Face index two")
+
+    ],
+    outputs=[
+        hs.HopsInteger("SP","SP","Shortest path nodes", hs.HopsParamAccess.LIST),
+
+    ]
+)
+def shortestPath(mesh, f1, f2):
+
+    G = mp.SimpleGraphFromMesh(mesh)
+    SP = mp.shortestPath(G, f1, f2)
+    
+    return SP
+
+
+
 
 
 
