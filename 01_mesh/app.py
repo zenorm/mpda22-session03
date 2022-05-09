@@ -37,19 +37,23 @@ def meshFromPoints(pts):
 
 
 
-@hops.component(
-    "/gridMesh",
+@hops.component("/gridMesh",
     name = "gridMesh",
+    inputs=[
+        hs.HopsInteger("U_count", "U", None), 
+        hs.HopsInteger("V_count", "V", None),
+    ],
+
     outputs=[
         hs.HopsMesh("Mesh","M","A simple rhino3dm mesh"),
-
     ]
 )
-def gridMesh():
+
+def gridMesh(U,V):
 
 
-    U = 5
-    V = 5
+ #   U = 5
+ #   V = 5
 
     #creating a simple mesh from a grid of points
     grid = []
