@@ -39,6 +39,7 @@ def meshToGraph(mesh, plot=False, save = False):
     "/shortestpath",
     name = "shortestpath",
     inputs=[
+        hs.HopsINteger(),
         hs.HopsMesh("Input Mesh", "M", "Mesh"),
         hs.HopsInteger("face Index 1","f1","Face index one"),
         hs.HopsInteger("face Index 2","f2","Face index two")
